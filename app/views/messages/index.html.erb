@@ -1,0 +1,19 @@
+
+
+<%= form_for @message, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  <%= f.label "Message" %>
+  <%= f.text_field :body, size: "60x12" %>
+  <%= fields_for @message.person.email do |p| %>
+    <%= p.label "Email of Recipient" %>
+       <%= p.text_field :email %>
+  <% end %> 
+  <%= f.submit "Create" %>
+<% end %>
+
+
+<%@messages.each do |message|%>
+  <h3><%=message.title%></h3>
+  <p><%=message.title%></p>
+<%end%>
