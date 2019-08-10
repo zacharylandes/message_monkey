@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :person do
-    messages { nil }
+
+    email {"az@sz.com"}
+    
   end
 end

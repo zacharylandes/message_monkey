@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :messages, only: [:new,:create,:index]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :people, only: [:show]
+
+  root :to => 'api/v1/messages#index'
+
+  namespace :api do
+    namespace :v1 do
+      get '/messages', to: 'messages#index', as: "messages"
+      post '/messages', to: 'messages#create'
+    end
+  end
+
+
+
 end

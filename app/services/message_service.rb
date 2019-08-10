@@ -1,24 +1,16 @@
 class MessageService
 
   def call(params)
-    person= Person.where(email:params["email"]).first
-    if person.present?
-      begin
-        create_message(params)
-      rescue => e
-         e
-      end
-    else 
-      email_not_found
+    begin
+     create_message(params)
+    rescue => e
+      e
     end
-end
+  end
   
   def create_message(params)
-    message = Message.new(title: params['title'], body: params['body'], person: person)
-    message.save!
+    person = Person.find_or_create_by!(email: params["email"])
+    Message.create!(title: params['message']['title'], body: params['message']['body'], person: person) 
   end
 
-  def email_not_found
-    false
-  end 
 end

@@ -9,6 +9,11 @@ gem 'rails', '~> 5.2.3'
 gem 'sqlite3'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'faker'
+gem 'factory_bot_rails'
+gem 'database_cleaner'
+gem 'font-awesome-rails' 
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

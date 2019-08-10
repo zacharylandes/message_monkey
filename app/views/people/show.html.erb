@@ -1,0 +1,21 @@
+
+<div class= "container">
+  <h4><%=@person.email%>'s Messages</h4>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Message</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @person.messages.each do |message| %>
+      <tr>
+        <td><%= message.id %></td>
+        <td><%= message.title%></td>
+        <td><%= link_to "#{message.person.email}", person_path(message.person.id) %></td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>

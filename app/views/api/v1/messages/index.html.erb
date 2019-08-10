@@ -1,7 +1,7 @@
 
 
 <div class='create-message'>
-<p>Create a new message</p>
+<h3>Create a new message</h3>
   <%= form_for @message, url: {action: "create"}, html: {class: "form-control "} do |f| %>
     <%= f.label "Title" %>
     <%= f.text_field :title %>
@@ -9,7 +9,7 @@
     <%= f.text_field :body, size: "60x12" %>
       <%= fields_for @message.person.email do |p| %>
         <%= p.label "Email of Recipient" %>
-          <%= p.text_field :email %>
+          <%= p.text_field :email, class: "autocomplete", id:"email" , name:"email"  %>
       <% end %> 
     <%= f.submit "Create", class: "input-group-text" %>
   <% end %>
@@ -33,4 +33,5 @@
     <%end%>
     </tbody>
   </table>
+  
 
