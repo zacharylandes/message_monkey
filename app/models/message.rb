@@ -19,7 +19,7 @@ class Message < ApplicationRecord
   
 
   def calculate_days_out
-    (Date.parse(person.visit_date) - Date.today).to_i if person.visit_date
+    (person.visit_date - Date.today).to_i if person.visit_date
   end
 
 

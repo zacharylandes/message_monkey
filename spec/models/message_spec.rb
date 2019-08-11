@@ -31,7 +31,7 @@ RSpec.describe Message, type: :model do
 
       it "default content contains the correct numnber of days to visit date" do 
      
-        expect(   message.calculate_days_out).to eq(12)
+        expect(message.calculate_days_out).to eq(12)
       end
     end
   end
