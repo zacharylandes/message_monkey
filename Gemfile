@@ -12,6 +12,8 @@ gem 'faker'
 gem 'factory_bot_rails'
 gem 'database_cleaner'
 gem 'font-awesome-rails' 
+gem 'sqlite3', group: [:development, :test]
+
 
 
 # Use Puma as the app server
