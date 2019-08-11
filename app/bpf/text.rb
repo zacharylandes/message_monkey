@@ -7,7 +7,7 @@ module BPF
       @message = response[:message]
     end
     
-    def self.send(to_number, from_number, body)
+    def self.send(to_number, body, from_number="415-111-11222")
       ## Text sending magic here ##
 
       ## For simplicity, 

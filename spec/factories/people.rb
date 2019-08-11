@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :person do
 
-    email {"az@sz.com"}
+    email {"zach@dc.gov"}
     
   end
 end

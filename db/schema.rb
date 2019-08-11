@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_181657) do
+ActiveRecord::Schema.define(version: 2019_08_10_232539) do
 
   create_table "messages", force: :cascade do |t|
     t.string "title"
@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_08_10_181657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "person_id"
-    t.string "visit_date"
-  end 
+    t.boolean "sent"
+  end
 
   create_table "people", force: :cascade do |t|
     t.string "first_name"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_08_10_181657) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone"
+    t.string "visit_date"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_181657) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone"
   end
 
 end
