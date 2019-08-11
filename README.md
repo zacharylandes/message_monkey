@@ -8,7 +8,7 @@
  EMAIL KEY = the email of an established customer
  VISIT DATE KEY  = the visit date for the customer 
 
-   `curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"admin@bpf.com\",\"visit_date\":\"01/01/2019\"}" http://localhost:3000/api/v1/messages`
+   `curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"admin@bpf.com\",\"visit_date\":\"01/01/2019\"}" https://message-monkey.herokuapp.com/api/v1/messages`
 
 
 To install and run locally simply:
