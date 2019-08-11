@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @messages = Message.all
+    @messages = Message.all.sort_by(&:updated_at).reverse
     @person = Person.new
     @message = Message.new(person: @person)
   end

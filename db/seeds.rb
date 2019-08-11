@@ -15,7 +15,6 @@ Person.create!( email:"admin@bpf.com",
                 phone: Faker::PhoneNumber.cell_phone)
 
 10.times do 
-  binding.pry
   person = Person.create!(email:Faker::Internet.email,
                           first_name: Faker::Name.first_name,
                           last_name:  Faker::Name.last_name,

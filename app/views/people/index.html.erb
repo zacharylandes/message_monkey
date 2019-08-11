@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <hr class="my-4">
+<h3 class='label'>All Customers</h3>
+<hr class="my-4">
+  <thead>
+    <tr>
+      <th scope="col">Person Name</th>
+      <th scope="col">Person Email</th>
+      <th scope="col">Person Visit Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= link_to "#{person.first_name} #{person.last_name}",person_path(person) %></td>
+      <td><%= link_to "#{person.email}", person_path(person.id) %></td>
+      <td><%=person.visit_date ?  person.visit_date : "No Visit Scheduled "%></td>
+
+    </tr>
+  <%end%>
+  </tbody>
+</table>

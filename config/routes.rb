@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :people, only: [:show,:create]
+  resources :people, only: [:show, :create, :index]
   
   resources :messages
   get :documentation, to: 'messages#documentation'
