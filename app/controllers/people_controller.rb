@@ -8,17 +8,17 @@ class PeopleController < ApplicationController
     person = Person.new(people_params)
     if person.save!
       flash[:success] = "Person Successfully created"
-      redirect_to api_v1_messages_path
+      redirect_to messages_path
     else
       flash[:danger] = "Couldn't create that person, please try again"
-      redirect_to api_v1_messages_path(:modal)
+      redirect_to messages_path(:modal)
     end
   end
 
   private
 
   def people_params
-      params.require(:person).permit(:first_name, :last_name, :email, :phone)
+      params.require(:person).permit(:first_name, :last_name, :email, :phone, :visit_date)
   end
 
 end

@@ -1,6 +1,8 @@
 
 <div class= "form-control">
-  <h4><%=@person.first_name%><%=@person.last_name%>'s Messages</h4>
+  <h4><%=@person.first_name%><%=@person.last_name%>'s Messages
+<%=@person.visit_date%></h4>
+
     <table class="table table-hover">
     <thead>
       <tr>
@@ -11,8 +13,8 @@
     <tbody>
     <% @person.messages.each do |message| %>
       <tr>
-        <td><%= message.body %></td>
-        <td><%=  message.sent ? "Sent": "Not Sent"%></td>
+        <td> <%= link_to "#{message.body}", message_path(message) %></td>
+        <td> <%= message.sent ? "Sent" : "Not Sent" %></td>
       </tr>
     <%end%>
     </tbody>

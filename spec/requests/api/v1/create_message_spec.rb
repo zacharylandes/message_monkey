@@ -34,7 +34,7 @@ describe "#POST to create a message via API", db_clean: :before_each do
 
 end
   
-describe "#POST to custom_message to create a message via UI", db_clean: :before_each do
+describe "#POST to create a message via UI", db_clean: :before_each do
   let!(:person) { FactoryBot.create(:person)}
   let!(:message_service) { double }
   let!(:valid_params) { {message: {body:"test"}, email:person.email}  }
@@ -46,7 +46,7 @@ describe "#POST to custom_message to create a message via UI", db_clean: :before
 
     allow(message_service).to receive(:create_manual_message).with(valid_params).and_return(valid_message)
 
-    post "/api/v1/custom_message", params: valid_params
+    post "/messages", params: valid_params
 
     expect(Message.count).to eq(1) 
   end
@@ -56,7 +56,7 @@ describe "#POST to custom_message to create a message via UI", db_clean: :before
 
     allow(message_service).to receive(:create_manual_message).with(invalid_params).and_return(false)
 
-    post "/api/v1/messages", params: invalid_params
+    post "/messages", params: invalid_params
       
     expect(response.status).to eq(302) 
     expect(Message.count).to eq(0) 

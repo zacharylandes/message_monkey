@@ -1,0 +1,14 @@
+<div class= form-control>
+  <h6>Feel free to hit our API to generate text messages </h6>
+</div>
+<div class= form-control>
+  <p><span> EMAIL KEY </span>= the email of an established customer</p>
+  <p><span> VISIT DATE KEY </span> = the visit date for the customer </p>
+
+  These two keys are all you need to generate an automated text message to your cusomter
+
+  <div class= form-control>
+  <h6>Example</h6>
+  curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"zach@dc.gov\",\"visit_date\":\"01/01/2019\"}" http://localhost:3000/api/v1/messages
+  </div>
+</div>

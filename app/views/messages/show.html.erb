@@ -1,0 +1,23 @@
+ <div class ='form-control'>
+  <h5>Edit Message to <%=@message.person.email %></h5>
+ </div>
+ <tr>
+  <%= form_for @message, method: :put, action: :update do |f| %>
+    <%= f.text_area :body, id: "inputDefault", class: "form-control col-md-9",placeholder:"#{@message.body}" %>
+    <%= f.submit "Update Message", class: "input-group-text" %>
+
+    <%if @message.sent  %>
+    <div class ='form-control col-md-3'>
+        <td>Message has been sent</td>
+      </div>
+    <%else%>
+    <div >
+        <%= f.submit :Send, class: "input-group-text" %>
+    </div>
+    <%end%>
+  <% end %>
+</tr>
+
+      <%=form_tag(message_path, method: :delete, action: :delete) do %> 
+        <%= submit_tag "Delete Message", class: "input-group-text" %>
+        <%end%> 

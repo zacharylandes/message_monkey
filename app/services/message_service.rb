@@ -27,4 +27,17 @@ class MessageService
     end
   end
   
+  def manage_update(params)
+    message = Message.find(params[:id])
+    if params[:commit] == "Send"
+      if ::BPF::Text.send(message.person.phone, message.body)
+         message.update_attributes(sent: true) 
+      else
+        false
+      end
+    else
+      body =  params[:message][:body] || ""
+      message.update_attributes!(body: body)
+    end
+  end
 end
