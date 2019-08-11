@@ -1,7 +1,7 @@
 require "#{Rails.root}/app/bpf/text.rb"
 class MessageService
 
-  #automated create and send message system coming from agnostic service
+  #automated create and send message system coming from external service
   def create_and_send_auto_message(params)
     begin
       person = Person.where(email: params["email"]).first
@@ -26,18 +26,23 @@ class MessageService
       false
     end
   end
+
+  def send(message)
+    if ::BPF::Text.send(message.person.phone, message.body)
+        message.update_attributes(sent: true) 
+    else
+      false
+    end
+  end
   
+  #manages all updates to a message, incliding sending a message
   def manage_update(params)
     message = Message.find(params[:id])
     if params[:commit] == "Send"
-      if ::BPF::Text.send(message.person.phone, message.body)
-         message.update_attributes(sent: true) 
-      else
-        false
-      end
+      send(message)
     else
       body =  params[:message][:body] || ""
-      message.update_attributes!(body: body)
+      message.update_attributes!(body: body, sent: false)
     end
   end
 end

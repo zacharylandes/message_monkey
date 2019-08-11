@@ -1,5 +1,4 @@
 <div class="alert alert-dismissible alert-primary">
-<%= button_to "", messages_path,class:"close"%>
   <button type="button" class="close" data-dismiss="alert"></button>
   <div class='form-group'>Looks like we don't have a customer with that email address</div>
   <button type="button" class= "btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -24,14 +23,14 @@
           <%= f.label "Email" %>
           <%= f.text_field :email, type: "email", class: "autocomplete col-md-5 form-control", id:"exampleInputEmail1" , placeholder:"Email"  %>
           <%= f.label "Phone" %>
-        <%= f.phone_field :phone, class: "col-md-5 form-control", id:"exampleInputEmail1" , placeholder:"Phone" %>
+          <%= f.phone_field :phone, class: "col-md-5 form-control", id:"exampleInputEmail1" , placeholder:"Phone" %>
           <%= f.label "Visit Date for this Person" %>
           <%= f.date_field :visit_date, type: "date", class: "autocomplete col-md-5 form-control", id:"exampleInputEmail1" , placeholder:"Email"  %>
-        <div class="modal-footer">
+          <div class="modal-footer">
             <%=f.submit "Create Person", class:"btn btn-primary "%>
-        </div>
+          </div>
       </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

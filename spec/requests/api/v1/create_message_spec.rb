@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-#these are response specs testing message creation via API and manual creation through UI
+#these are response specs for testing message creation via API and manual creation through UI
 describe "#POST to create a message via API", db_clean: :before_each do
   let!(:person) { FactoryBot.create(:person)}
   let!(:message_service) { double }
@@ -12,7 +12,6 @@ describe "#POST to create a message via API", db_clean: :before_each do
 
   it " succesfully creates a message" do
     expect(Message.count).to eq(0) 
-    
     allow(message_service).to receive(:create_and_send_auto_message).with(valid_params).and_return(valid_message)
 
     post "/api/v1/messages", params: valid_params
@@ -23,7 +22,6 @@ describe "#POST to create a message via API", db_clean: :before_each do
 
   it "fails to create a message with invalid params" do
     expect(Message.count).to eq(0) 
-
     allow(message_service).to receive(:create_and_send_auto_message).with(invalid_params).and_return(false)
 
     post "/api/v1/messages", params: invalid_params
@@ -43,7 +41,6 @@ describe "#POST to create a message via UI", db_clean: :before_each do
   
   it "succesfully creates a message" do
     expect(Message.count).to eq(0) 
-
     allow(message_service).to receive(:create_manual_message).with(valid_params).and_return(valid_message)
 
     post "/messages", params: valid_params
@@ -53,7 +50,6 @@ describe "#POST to create a message via UI", db_clean: :before_each do
 
   it "fails to create a message with invalid params" do
     expect(Message.count).to eq(0) 
-
     allow(message_service).to receive(:create_manual_message).with(invalid_params).and_return(false)
 
     post "/messages", params: invalid_params
