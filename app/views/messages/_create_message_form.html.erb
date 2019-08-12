@@ -1,3 +1,9 @@
+<hr class="my-4">
+<div class="form-group">
+  <h5>Welcome to message monkey</h5>
+  <span>Here you can create, update and send messages to BPF customers. You can also </span>
+  <span> view customers and their messages </span>
+</div>
 <div class="form-group">
   <hr class="my-4">
   <h3 class='label'>Create a new message</h3>
@@ -7,7 +13,7 @@
     <%= f.text_area :body, id: "inputDefault", class: "form-control col-md-2 ", placeholder:"Message" %>
     <%= fields_for @message.person.email do |p| %>
       <%= p.label "Email of Recipient" %>
-      <%= p.text_field :email, type:"email", class: "autocomplete col-md-2 form-control", id:"exampleInputEmail1" , placeholder:"Email",required:true %>
+      <%= p.text_field :email, type:"email", class: "autocomplete col-md-2 form-control", id:"myInput" , placeholder:"Email",required:true %>
     <% end %> 
     <%= f.submit "Create", class: "input-group-text", data: {toggle:"modal",target:"exampleModal"} %>
   <% end %>

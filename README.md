@@ -8,7 +8,7 @@
  EMAIL KEY = the email of an established customer <br />
  VISIT DATE KEY  = the visit date for the customer <br />
 
-   `curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"admin@bpf.com\",\"visit_date\":\"01/01/2019\"}" https://message-monkey.herokuapp.com/api/v1/messages` <br />
+   ` curl -i -X POST -H "Content-Type: application/json" -d "{\"email\":\"admin@bpf.com\",\"visit_date\":\"9/01/2019\"}" https://message-monkey.herokuapp.com/api/v1/messages` <br />
 
 
  Visit the site live at https://message-monkey.herokuapp.com

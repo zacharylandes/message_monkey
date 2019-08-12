@@ -7,13 +7,13 @@
   <%end%>
   <table class="table table-hover">
     <hr class="my-4">
-    <h3 class='label'>All Messages</h3>
+    <h3 class='label'>All Messages (<%=@messages.count%>)</h3>
     <hr class="my-4">
     <thead>
       <tr>
-        <th scope="col">Message</th>
-        <th scope="col">Recipient</th>
-        <th scope="col">Status</th>
+        <th scope="col"> Message</th>
+        <th scope="col"> Recipient </th>
+        <th scope="col"> Status </th>
       </tr>
     </thead>
     <tbody>
@@ -27,5 +27,4 @@
     </tbody>
   </table>
 </div>
-  
-
+<%= render :partial => 'index.js.erb', locals: {emails: @emails} %>
