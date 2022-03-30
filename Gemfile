@@ -14,7 +14,7 @@ gem 'factory_bot_rails'
 gem 'database_cleaner'
 gem 'font-awesome-rails' 
 gem 'sqlite3', group: [:development, :test]
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'sass-rails', '>= 3.2'
